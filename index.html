@@ -16,7 +16,24 @@
             --mac-screen: #3a3a3a;
             --mac-accent: #b5b5a0;
         }
+        a:link {
+            color: rgb(12, 12, 12);
+        }
 
+            /* visited link */
+        a:visited {
+            color: green;
+        }
+
+            /* mouse over link */
+        a:hover {
+            color: rgb(251, 65, 130);
+        }
+
+            /* selected link */
+        a:active {
+            color: blue;
+        }
         body, html {
             margin: 0;
             padding: 0;
@@ -115,25 +132,27 @@
 
         .title-text { background: var(--title-bar); padding: 0 10px; font-weight: bold; font-size: 14px; }
         .close-btn { display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-family: 'Chicago', sans-serif;
-    font-weight: bold;
-    line-height: 1;
-    text-decoration: none;
-    color: black;
-    width: 14px; height: 14px; border: 2px solid var(--border-dark); background: white; cursor: pointer; margin-left: 5px;}
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 15px;
+                    font-family: 'Chicago', sans-serif;
+                    font-weight: bold;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: black;
+                    width: 14px; height: 14px; border: 2px solid var(--border-dark); background: white; cursor: pointer; margin-left: 5px;
+                }
         .back-btn { display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-family: 'Chicago', sans-serif;
-    font-weight: bold;
-    line-height: 1;
-    text-decoration: none;
-    color: black;
-    width: 18px; height: 14px; border: 2px solid var(--border-dark); background: white; cursor: pointer; margin-left: 5px;}
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 15px;
+                    font-family: 'Chicago', sans-serif;
+                    font-weight: bold;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: black;
+                    width: 18px; height: 14px; border: 2px solid var(--border-dark); background: white; cursor: pointer; margin-left: 5px;
+                }
         
         .nav-menu { background: #eee; border-bottom: 1px solid #ccc; padding: 10px; display: flex; gap: 10px; }
         .nav-menu button { 
@@ -203,9 +222,9 @@
                 <h2>Image Classifier for ABU Robocon 2025</h2>
                 <hr>
                 <p>It classifes images into 3 classes</p>
-                <p>It uses tensorflow and mobilenet
-                    </p><p> 
-                </p>
+                <p>It uses tensorflow and mobilenet</p>
+                <a href="https://github.com/LiliesInLakes/Symbols-Classifier" target="_blank">Source code</a>
+                <!-- <p onclick="https://github.com/LiliesInLakes/Symbols-Classifier">https://github.com/LiliesInLakes/Symbols-Classifier</p> -->
             </div>
         </div>
     </div>
@@ -226,11 +245,13 @@
                 <h2>Work Directory</h2>
                 <hr>
                 <ul>
-                    <li>SymbolsClassifier.keras</li>
-                    <li>Website_Source_Code</li>
+                    <!-- <li>SymbolsClassifier.keras</li> -->
+                    <!-- <li>Website_Source_Code</li> -->
                     <li>Design_Assets.zip</li>
-                    <button onclick="showSection('SymbolsClassifier')">SymbolsClassifier.keras</button>
-                    <button onclick="showSection('about-page')">Website_Source_Code</button>
+                    <br>
+                    <li onclick="showSection('SymbolsClassifier')">Symbol_Classifier.keras</li>
+                    <br>
+                    <li onclick="showSection('about-page')">Website_Source_Code</li>
                 </ul>
             </div>
         </div>
