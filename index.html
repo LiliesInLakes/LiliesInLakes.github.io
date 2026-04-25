@@ -163,6 +163,12 @@
             padding: 2px 10px;
         }
         .nav-menu button:active { background: #444; color: white; }
+        .gif-container {
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;     /* Vertical centering */
+            height: 100vh;           /* Optional: center in the full viewport height */
+        }
 
         .window-content { padding: 20px; min-height: 200px; }
         .hidden { display: none !important; }
@@ -218,7 +224,7 @@
                 <button onclick="showSection('about-page')">About</button>
                 <button onclick="showSection('projects-page')">Projects</button>
             </div> -->
-            <div class="window-content">
+            <div class="gif-container">
                 <img src="giphy.gif" alt="RickRoll" style="width:480px;height:480px;">
             </div>
         </div>
