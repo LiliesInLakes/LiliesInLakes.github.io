@@ -190,6 +190,29 @@
         </div>
         <div class="click-text">CLICK TO BOOT</div>
     </div>
+
+    <div id="IIT-Marks" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('about-page')"><-</div>
+                <span class="title-text">Academics</span>
+                <div style="width:20px"></div>
+            </div>
+            <!-- <div class="nav-menu">
+                <button onclick="showSection('about-page')">About</button>
+                <button onclick="showSection('projects-page')">Projects</button>
+            </div> -->
+            <div class="window-content">
+                <h2>Marks at IIT</h2>
+                <hr>
+                <p>My grade point is 9.4</p>
+                <p>My JEE Advanced rank is 9951</p>
+                <p>My JEE Mains result is 99.14 percentile</p>
+                <!-- <p onclick="https://github.com/LiliesInLakes/Symbols-Classifier">https://github.com/LiliesInLakes/Symbols-Classifier</p> -->
+            </div>
+        </div>
+    </div>
+
     <div id="about-page" class="page-content">
         <div class="window">
             <div class="title-bar">
@@ -206,7 +229,9 @@
                 <hr>
                 <p>Status: Perpetually Online</p>
                 <p>Unlocked:</p>
-                <p>BTech in DSAI @ IITP</p>
+                <li onclick="showSection('IIT-Marks')">BTech in DSAI @ IITP</li>
+                <li onclick="showSection('Kalam-award')">Dr APJ Abdul Kalam Ignited Mind Children Creativity and Innovation Award</li>
+                <li>World Intellectual Property Day Presenter</li>
                 <p>I am a tech enthusiast. I like to work on Artificial Intelligence, Robotics and Computer vision. When I'm not training models, you'll find me sketching, making music, or shooting hoops on the basketball court.
                 </p>
             </div>
@@ -231,7 +256,22 @@
         </div>
     </div>
 
-
+    <div id="Kalam-award" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('about-page')"><-</div>
+                <span class="title-text">Award</span>
+                <div style="width:20px"></div>
+            </div>
+            <!-- <div class="nav-menu">
+                <button onclick="showSection('about-page')">About</button>
+                <button onclick="showSection('projects-page')">Projects</button>
+            </div> -->
+            <div class="gif-container">
+                <img src="kalamphoto.png" alt="Award" style="width:480px;height:480px;">
+            </div>
+        </div>
+    </div>
 
     <div id="SymbolsClassifier" class="page-content">
         <div class="window">
@@ -247,13 +287,36 @@
             <div class="window-content">
                 <h2>Image Classifier for ABU Robocon 2025</h2>
                 <hr>
-                <p>It classifes images into 3 classes</p>
+                <p>It classifes images into 3 classes in real time by taking camera input. It's purpose is to help the robot decide which objects to interact with.</p>
                 <p>It uses tensorflow and mobilenet</p>
                 <a href="https://github.com/LiliesInLakes/Symbols-Classifier" target="_blank">Source code</a>
                 <!-- <p onclick="https://github.com/LiliesInLakes/Symbols-Classifier">https://github.com/LiliesInLakes/Symbols-Classifier</p> -->
             </div>
         </div>
     </div>
+
+    <div id="Marvel-classifier" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('projects-page')"><-</div>
+                <span class="title-text">Image Classifier</span>
+                <div style="width:20px"></div>
+            </div>
+            <!-- <div class="nav-menu">
+                <button onclick="showSection('about-page')">About</button>
+                <button onclick="showSection('projects-page')">Projects</button>
+            </div> -->
+            <div class="window-content">
+                <h2>150 KB Image Classifier</h2>
+                <hr>
+                <p>It is trained on only STL10 data and has 71% accuracy. It won 2nd place in our college hackathon.</p>
+                <p>It is built with pytorch using data augmentation and quantisation techniques.</p>
+                <a href="https://github.com/LiliesInLakes/Submission" target="_blank">Source code</a>
+                <!-- <p onclick="https://github.com/LiliesInLakes/Symbols-Classifier">https://github.com/LiliesInLakes/Symbols-Classifier</p> -->
+            </div>
+        </div>
+    </div>
+
 
 
     <div id="projects-page" class="page-content">
@@ -276,6 +339,8 @@
                     <li onclick="showSection('rick-astley')">Summer_Research.pdf</li>
                     <br>
                     <li onclick="showSection('SymbolsClassifier')">Symbol_Classifier.keras</li>
+                    <br>
+                    <li onclick="showSection('Marvel-classifier')">Marvel.pth</li>
                     <br>
                     <li onclick="showSection('rick-astley')">Website_Code.html</li>
                 </ul>
