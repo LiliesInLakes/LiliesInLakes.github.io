@@ -232,7 +232,7 @@
     <div id="about-page" class="page-content">
         <div class="window">
             <div class="title-bar">
-                <div class="close-btn" onclick="location.reload()">X</div>
+                <div class="close-btn" onclick=" click_for_others; location.reload();">X</div>
                 <span class="title-text">SYSTEM_PROFILE</span>
                 <div style="width:20px"></div>
             </div>
@@ -252,7 +252,7 @@
                 </ul>
                 <p>I am a tech enthusiast. I like to work on Artificial Intelligence, Robotics and Computer vision. When I'm not training models, you'll find me sketching, making music, or shooting hoops on the basketball court.</p>
                 <ul class="inline-list">
-                    <li onclick="window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">·LinkedIn·</li><li onclick="window.open('https://github.com/LiliesInLakes', '_blank');">·Github·</li>
+                    <li onclick="click_for_others; window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">·LinkedIn·</li><li onclick="click_for_others; window.open('https://github.com/LiliesInLakes', '_blank');">·Github·</li>
                 </ul>
             </div>
         </div>
@@ -342,7 +342,7 @@
     <div id="projects-page" class="page-content">
         <div class="window">
             <div class="title-bar">
-                <div class="close-btn" onclick="location.reload()">X</div>
+                <div class="close-btn" onclick="location.reload(); click_for_others">X</div>
                 <span class="title-text">PROJECT_FILES</span>
                 <div style="width:20px"></div>
             </div>
@@ -387,7 +387,10 @@ function showSection(sectionId, silent = false) {
     const target = document.getElementById(sectionId);
     target.classList.add('active-page');
 }
-
+function click_for_others(){
+    const sound = document.getElementById('click-sound');
+    sound.play().catch(e => console.log("Sound blocked"));
+  }
 function openPortfolio() {
     const sound = document.getElementById('startup-sound');
     sound.play().catch(e => console.log("Sound blocked"));
