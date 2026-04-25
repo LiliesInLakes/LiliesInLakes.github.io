@@ -21,9 +21,9 @@
         }
 
             /* visited link */
-        a:visited {
+        /* a:visited {
             color: green;
-        }
+        } */
 
             /* mouse over link */
         a:hover {
@@ -31,9 +31,9 @@
         }
 
             /* selected link */
-        a:active {
+        /* a:active {
             color: blue;
-        }
+        } */
         body, html {
             margin: 0;
             padding: 0;
@@ -207,6 +207,25 @@
     </div>
 
 
+    <div id="rick-astley" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('projects-page')"><-</div>
+                <span class="title-text">ERROR_303</span>
+                <div style="width:20px"></div>
+            </div>
+            <!-- <div class="nav-menu">
+                <button onclick="showSection('about-page')">About</button>
+                <button onclick="showSection('projects-page')">Projects</button>
+            </div> -->
+            <div class="window-content">
+                <img src="giphy.gif" alt="RickRoll" style="width:480px;height:480px;">
+            </div>
+        </div>
+    </div>
+
+
+
     <div id="SymbolsClassifier" class="page-content">
         <div class="window">
             <div class="title-bar">
@@ -247,11 +266,11 @@
                 <ul>
                     <!-- <li>SymbolsClassifier.keras</li> -->
                     <!-- <li>Website_Source_Code</li> -->
-                    <li>Design_Assets.zip</li>
+                    <li onclick="showSection('rick-astley')">Summer Internship</li>
                     <br>
                     <li onclick="showSection('SymbolsClassifier')">Symbol_Classifier.keras</li>
                     <br>
-                    <li onclick="showSection('about-page')">Website_Source_Code</li>
+                    <li onclick="showSection('rick-astley')">Website_Source_Code</li>
                 </ul>
             </div>
         </div>
