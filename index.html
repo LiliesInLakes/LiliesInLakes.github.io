@@ -27,13 +27,24 @@
 
             /* mouse over link */
         a:hover {
-            color: rgb(251, 65, 130);
+            color: rgb(0, 0, 255);
         }
 
             /* selected link */
         /* a:active {
             color: blue;
         } */
+
+    
+        li[onclick] {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        li[onclick]:hover {
+            color: rgb(0, 0, 25); /* Same pink you use for links */
+            text-decoration: underline;
+        }
         body, html {
             margin: 0;
             padding: 0;
