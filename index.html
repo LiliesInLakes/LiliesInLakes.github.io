@@ -140,7 +140,12 @@
             align-items: center;
             background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #bbb 2px, #bbb 4px);
         }
-
+        .inline-list {
+            display: flex;       /* Lays children out in a row */
+            list-style: none;    /* Removes the bullet points */
+            padding: 0;
+            gap: 20px;           /* Sets the distance between the two items */
+        }
         .title-text { background: var(--title-bar); padding: 0 10px; font-weight: bold; font-size: 14px; }
         .close-btn { display: flex;
                     justify-content: center;
@@ -238,7 +243,7 @@
             <div class="window-content">
                 <h2>User: Developer</h2>
                 <hr>
-                <p>Status: Perpetually Online</p>
+                <p>Status: <span style="color: #00ff00; animation: blink 1s infinite;">●</span>Perpetually Online </p>
                 <p>Unlocked:</p>
                 <ul>
                 <li onclick="showSection('IIT-Marks')">BTech in DSAI @ IITP</li>
@@ -246,8 +251,9 @@
                 <li onclick="window.open('https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1820189&reg=3&lang=2', '_blank');">World Intellectual Property Day Presenter</li>
                 </ul>
                 <p>I am a tech enthusiast. I like to work on Artificial Intelligence, Robotics and Computer vision. When I'm not training models, you'll find me sketching, making music, or shooting hoops on the basketball court.</p>
-                <br>
-                <span onclick="window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">LinkedIn&emsp;&emsp;&emsp;</span><span onclick="window.open('https://github.com/LiliesInLakes', '_blank');">Github&emsp;&emsp;&emsp;</span>
+                <ul class="inline-list">
+                    <li onclick="window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">·LinkedIn·</li><li onclick="window.open('https://github.com/LiliesInLakes', '_blank');">·Github·</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -364,37 +370,38 @@
 
     <script>
         // FUNCTION 1: The Initial Boot
-        function openPortfolio() {
-            // Play the sound
-            const sound = document.getElementById('startup-sound');
-            sound.play().catch(e => console.log("Sound blocked by browser"));
+        // Add a 'silent' parameter with a default of 'false'
+function showSection(sectionId, silent = false) {
+    const allPages = document.querySelectorAll('.page-content');
+    allPages.forEach(page => {
+        page.classList.remove('active-page');
+    });
 
-            const landing = document.getElementById('landing');
-            
-            // Start the transition
-            landing.style.opacity = '0';
-            landing.style.transform = 'scale(3)'; // Zoom into screen
-            
-            setTimeout(() => {
-                landing.classList.add('hidden');
-                showSection('about-page'); // Load the first page
-            }, 600);
-        }
+    // Only play if NOT silent
+    if (!silent) {
+        const sound = document.getElementById('click-sound');
+        const soundClone = sound.cloneNode();
+        soundClone.play().catch(e => console.log("Sound blocked"));
+    }
 
-        // FUNCTION 2: Switching between "Pages"
-        function showSection(sectionId) {
-            // Hide all pages first
-            const allPages = document.querySelectorAll('.page-content');
-            allPages.forEach(page => {
-                page.classList.remove('active-page');
-            });
-            const sound = document.getElementById('click-sound');
-            sound.play().catch(e => console.log("Sound blocked by browser"));
+    const target = document.getElementById(sectionId);
+    target.classList.add('active-page');
+}
 
-            // Show the specific one
-            const target = document.getElementById(sectionId);
-            target.classList.add('active-page');
-        }
+function openPortfolio() {
+    const sound = document.getElementById('startup-sound');
+    sound.play().catch(e => console.log("Sound blocked"));
+
+    const landing = document.getElementById('landing');
+    landing.style.opacity = '0';
+    landing.style.transform = 'scale(3)';
+    
+    setTimeout(() => {
+        landing.classList.add('hidden');
+        // Pass 'true' here to make the transition silent!
+        showSection('about-page', true); 
+    }, 600);
+}
     </script>
 </body>
 </html>
