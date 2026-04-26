@@ -409,6 +409,24 @@ function openPortfolio() {
         showSection('about-page', true); 
     }, 600);
 }
+function logVisitToPrivateSheet() {
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbwOrUrwKU1RwjhKOL8kgDOnJeq1KTIHm7jQh5Ucleb3tqS_DphXe1BEUn58L-QjSTfb/exec"; // Paste your URL from Step 2
+    const userAgent = navigator.userAgent;
+
+    // Send the visit data quietly in the background
+    fetch(`${webAppUrl}?userAgent=${encodeURIComponent(userAgent)}`, {
+        mode: 'no-cors' // Allows the request to fire even without a complex setup
+    })
+    .then(() => console.log("Visit tracked privately."))
+    .catch(err => console.error("Tracking error:", err));
+}
+
+// Call this function when the page loads
+window.onload = function() {
+    logVisitToPrivateSheet();
+    // (If you have other onload functions, like the computer boot, keep them here too!)
+};
+
     </script>
 </body>
 </html>
