@@ -45,9 +45,6 @@
             color: rgb(0, 0, 25); /* Same pink you use for links */
             text-decoration: underline;
         }
-        /* img{
-            filter:grayscale(70%);
-        } */
         body, html {
             margin: 0;
             padding: 0;
@@ -74,10 +71,9 @@
             width: 400px;
             height: 480px;
             background: var(--mac-case);
-            border-radius: 15px 15px 10px 10px;
+            border-radius: 10px 10px 5px 5px;
             margin: 0 auto 20px auto;
-            box-shadow: 12px 24px 12px rgba(0,0,0,0.2), /* The retro flat shadow */
-                        25px 25px 50px rgba(0,0,0,0.4); /* The soft depth shadow */
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
         }
 
         .screen-border {
@@ -85,7 +81,7 @@
             top: 40px; left: 40px; right: 40px;
             height: 260px;
             background: var(--mac-accent);
-            border-radius: 15px;
+            border-radius: 5px;
             padding: 10px;
         }
 
@@ -94,7 +90,6 @@
             background: var(--mac-screen);
             display: flex; justify-content: center; align-items: center;
             color: #00ff00; font-size: 24px;
-            border-radius: 15px;
         }
 
         .floppy-slot {
@@ -259,7 +254,7 @@
                 </ul>
                 <p>I am a tech enthusiast. I like to work on Artificial Intelligence, Robotics and Computer vision. When I'm not training models, you'll find me sketching, making music, or shooting hoops on the basketball court.</p>
                 <ul class="inline-list">
-                    <li onclick="click_for_others(); window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">·LinkedIn·</li><li onclick="click_for_others(); window.open('https://github.com/LiliesInLakes', '_blank');">·Github·</li>
+                    <li onclick="click_for_others(); window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">·LinkedIn·</li><li onclick="click_for_others; window.open('https://github.com/LiliesInLakes', '_blank');">·Github·</li>
                 </ul>
             </div>
         </div>
@@ -430,7 +425,7 @@ function logVisitToPrivateSheet() {
 }
 
 // Call this function when the page loads
-DOMContentLoaded = function() {
+window.onload = function() {
     logVisitToPrivateSheet();
     // (If you have other onload functions, like the computer boot, keep them here too!)
 };
