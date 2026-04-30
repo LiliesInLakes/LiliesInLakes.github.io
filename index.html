@@ -239,7 +239,7 @@
     <div id="about-page" class="page-content">
         <div class="window">
             <div class="title-bar">
-                <div class="close-btn" onclick=" click_for_others; location.reload();">X</div>
+                <div class="close-btn" onclick=" click_for_others(); location.reload();">X</div>
                 <span class="title-text">SYSTEM_PROFILE</span>
                 <div style="width:20px"></div>
             </div>
@@ -430,7 +430,7 @@ function logVisitToPrivateSheet() {
 }
 
 // Call this function when the page loads
-window.onload = function() {
+DOMContentLoaded = function() {
     logVisitToPrivateSheet();
     // (If you have other onload functions, like the computer boot, keep them here too!)
 };
