@@ -412,23 +412,46 @@ function openPortfolio() {
         showSection('about-page', true); 
     }, 600);
 }
-function logVisitToPrivateSheet() {
-    const webAppUrl = "https://script.google.com/macros/s/AKfycbwPPkbY5hzstNXsSOLP0tpEKueFxNQ1vwDa_jXk_If5G61N4C8odx7z56qa6825ZJRE/exec"; // Paste your URL from Step 2
-    const userAgent = navigator.userAgent;
+// function logVisitToPrivateSheet() {
+//     const webAppUrl = "https://script.google.com/macros/s/AKfycbxcV2Y7RA2C0U2MX277IfWHtGYc5WspH-b5pFmUB3XTYPWLfQ0XcwmFgzh7NoCfu898/exec"; // Paste your URL from Step 2
+//     const userAgent = navigator.userAgent;
 
-    // Send the visit data quietly in the background
-    fetch(`${webAppUrl}?userAgent=${encodeURIComponent(userAgent)}`, {
-        mode: 'no-cors' // Allows the request to fire even without a complex setup
+//     // Send the visit data quietly in the background
+//     fetch(`${webAppUrl}?userAgent=${encodeURIComponent(userAgent)}`, {
+//         mode: 'no-cors' // Allows the request to fire even without a complex setup
+//     })
+//     .then(() => console.log("Visit tracked privately."))
+//     .catch(err => console.error("Tracking error:", err));
+// }
+
+// // Call this function when the page loads
+// window.onload = function() {
+//     logVisitToPrivateSheet();
+//     // (If you have other onload functions, like the computer boot, keep them here too!)
+// };
+
+
+
+
+
+        function logVisit() {
+    // PASTE YOUR NEW URL BELOW
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbxcV2Y7RA2C0U2MX277IfWHtGYc5WspH-b5pFmUB3XTYPWLfQ0XcwmFgzh7NoCfu898/exec";
+    
+    const params = new URLSearchParams({
+        userAgent: navigator.userAgent
+    });
+
+    fetch(`${webAppUrl}?${params.toString()}`, {
+        method: 'GET',
+        mode: 'no-cors' 
     })
-    .then(() => console.log("Visit tracked privately."))
-    .catch(err => console.error("Tracking error:", err));
+    .then(() => console.log("Retro-Tracker: Data sent to log."))
+    .catch(err => console.error("Retro-Tracker: Connection failed", err));
 }
 
-// Call this function when the page loads
-window.onload = function() {
-    logVisitToPrivateSheet();
-    // (If you have other onload functions, like the computer boot, keep them here too!)
-};
+// Call it
+logVisit();
     </script>
 </body>
 </html>
