@@ -53,7 +53,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #2c3e50;
+            background-color: #333;
             font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
         }
@@ -68,30 +68,60 @@
 
         .computer {
             position: relative;
-            width: 400px;
-            height: 480px;
-            background: var(--mac-case);
-            border-radius: 10px 10px 5px 5px;
+            width: 700px; /* Slightly wider for the TV look */
+            height: 600px;
+            background: #0b0b0b; /* Darker plastic frame */
+            border-radius: 40px;
             margin: 0 auto 20px auto;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: inset -10px -10px 15px #3c3c3c, 15px 15px 30px #3c3c3c(0,0,0,0.5);
         }
 
         .screen-border {
-            position: absolute;
-            top: 40px; left: 40px; right: 40px;
-            height: 260px;
-            background: var(--mac-accent);
-            border-radius: 5px;
-            padding: 10px;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: inset 0 0 20px #000;
+            display: flex;
         }
 
         .screen {
-            width: 100%; height: 100%;
-            background: var(--mac-screen);
-            display: flex; justify-content: center; align-items: center;
-            color: #00ff00; font-size: 24px;
+            width: 100%;
+            height: 100%;
+            background-color: #222;
+            /* EDIT THE IMAGE BELOW */
+            background-image: url('homescreen.jpg'); 
+            background-size: cover;
+            background-position: center;
+            
+            border-radius: 25px; /* Creates that 'round' TV tube look */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            color: #3d3a3a;
+            text-shadow: 2px 2px 0px #000, 0 0 10px rgba(255,255,255,0.5);
+            position: relative;
+            overflow: hidden;
         }
 
+        .screen::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(216, 0, 0, 0.043) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
         .floppy-slot {
             position: absolute; bottom: 40px; right: 25px;
             width: 60px; height: 4px; background: #555;
@@ -208,14 +238,15 @@
     <div id="landing" onclick="openPortfolio()">
         <div class="computer">
             <div class="screen-border">
-                <div class="screen"><span >HELLO_</span></div>
+                <div class="screen">
+                    <!-- Text elements centered over the image -->
+                    <div style="font-size: 14px; margin-bottom: 10px;"></div>
+                    <div style="font-size: 48px; font-weight: bold; letter-spacing: -2px;">HELLO_</div>
+                    <div class="click-text" style="font-size: 18px; margin-top: 10px; border: 2px solid rgb(0, 0, 0); padding: 5px 15px; border-radius: 5px;">LAUNCH</div>
+                </div>
             </div>
-            <div class="floppy-slot"></div>
-            <div class="base"></div>
         </div>
-        <div class="click-text">CLICK TO BOOT</div>
-        <p style="position: absolute; bottom: 0; left: 0; width: 100%; text-align: right; font-size: 4px; color: rgb(16, 15, 15)">I use basic, anonymous analytics to count site visits. No personal data is stored.</p>
-
+        <!-- <div class="click-text">CLICK TO BOOT</div> -->
     </div>
 
     <div id="IIT-Marks" class="page-content">
