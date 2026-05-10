@@ -53,7 +53,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #333;
+            background-color: #030303;
             font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
         }
@@ -64,6 +64,16 @@
             cursor: pointer;
             transition: transform 0.6s ease-in-out, opacity 0.5s;
             z-index: 100;
+        }
+        #landing {
+            position: relative;
+            width: 90vw;        /* Scales with browser width */
+            max-width: 1000px;  /* Limits max size */
+            aspect-ratio: 4 / 3; /* Matches the proportions of a CRT monitor */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .computer {
@@ -89,27 +99,46 @@
             box-shadow: inset 0 0 20px #000;
             display: flex;
         }
+        .monitor-frame {
+            position: absolute;
+            /* top: 0;
+            left: 0; */
+            width: 120%;
+            height: 120%;
+            background-image: url('computerhole.png'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center; /* THIS centers the monitor image */
+            z-index: 2; 
+            pointer-events: none; 
+        }
 
         .screen {
-            width: 100%;
-            height: 100%;
-            background-color: #222;
-            /* EDIT THE IMAGE BELOW */
+            position: absolute; /* Changed from relative so it can be moved freely */
+            
+            /* ADJUST THESE 4 VALUES to perfectly line up with your specific PNG hole */
+            top: -4%;
+            left: 15%;
+            width: 65%;
+            height: 70%;
+            
+            background-color: #463e3e;
             background-image: url('darklilieshome.png'); 
             background-size: cover;
-            background-position: center;
-            
-            border-radius: 25px; /* Creates that 'round' TV tube look */
+            background-position: center; /* Fixed the invalid 'absolute' typo */
+            z-index: 1;
+                    
+            border-radius: 25px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             
-            color: #3d3a3a;
-            text-shadow: 2px 2px 0px #000, 0 0 10px rgba(255,255,255,0.5);
-            position: relative;
+            color: #fffffd;
+            text-shadow: 2px 2px 0px #398852, 0 0 10px rgba(129, 252, 7, 0.986);
             overflow: hidden;
         }
+        
 
         .screen::after {
             content: " ";
@@ -133,7 +162,7 @@
             border-radius: 5px;
         }
 
-        .click-text { color: #3d3a3a; letter-spacing: 2px; animation: blink 1.5s infinite; }
+        .click-text { color: #ffffff; letter-spacing: 2px; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         /* --- Global Page Container --- */
@@ -236,18 +265,31 @@
     <audio id="startup-sound" src="wowww.mp3" type="audio/mpeg"></audio>
 
     <div id="landing" onclick="openPortfolio()">
+        <div class="screen-content">
+            <div class="screen-border">
+            <div class="screen">
+                    <div style="font-size: 14px; margin-bottom: 10px;"></div>
+                    <div style="font-size: 48px; font-weight: bold; letter-spacing: -2px;">HELLO</div>
+                    <div class="click-text" style="font-size: 20px; margin-top: 10px; border: 3px solid rgb(244, 242, 242); padding: 5px 15px; border-radius: 5px;">LAUNCH</div>
+                </div>
+                </div>
+            </div>
+
+        <div class="monitor-frame"></div>
+    </div>
+    <!-- <div id="landing" onclick="openPortfolio()">
         <div class="computer">
             <div class="screen-border">
                 <div class="screen">
-                    <!-- Text elements centered over the image -->
+                    Text elements centered over the image
                     <div style="font-size: 14px; margin-bottom: 10px;"></div>
                     <div style="font-size: 48px; font-weight: bold; letter-spacing: -2px;">HELLO_</div>
                     <div class="click-text" style="font-size: 18px; margin-top: 10px; border: 2px solid rgb(0, 0, 0); padding: 5px 15px; border-radius: 5px;">LAUNCH</div>
                 </div>
             </div>
         </div>
-        <!-- <div class="click-text">CLICK TO BOOT</div> -->
-    </div>
+        <div class="click-text">CLICK TO BOOT</div>
+    </div> -->
 
     <div id="IIT-Marks" class="page-content">
         <div class="window">
