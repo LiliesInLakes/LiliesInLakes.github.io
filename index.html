@@ -45,6 +45,10 @@
             color: rgb(0, 0, 25); /* Same pink you use for links */
             text-decoration: underline;
         }
+        span[onclick]:hover {
+            color: rgb(0, 0, 25); /* Same pink you use for links */
+            text-decoration: underline;
+        }
         body, html {
             margin: 0;
             padding: 0;
@@ -334,7 +338,7 @@
                 <li onclick="showSection('Kalam-award')">Dr APJ Abdul Kalam Ignited Mind Children Creativity and Innovation Award</li>
                 <li onclick="window.open('https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1820189&reg=3&lang=2', '_blank');">World Intellectual Property Day Presenter</li>
                 </ul>
-                <p>I am a tech enthusiast. I like to work on Artificial Intelligence, Robotics and Computer vision. When I'm not training models, you'll find me sketching, shooting hoops on the basketball court or reading fiction.</p>
+                <span>I am a tech enthusiast. I like to work on Artificial Intelligence, Robotics and Computer vision. When I'm not training models, you'll find me </span><span onclick="showSection('Art')">sketching</span><span>, shooting hoops on the basketball court or reading fiction.</span>
                 <ul class="inline-list">
                     <li onclick="click_for_others(); window.open('https://www.linkedin.com/in/avni-agarwal-021b69366/', '_blank');">·LinkedIn·</li><li onclick="click_for_others; window.open('https://github.com/LiliesInLakes', '_blank');">·Github·</li>
                 </ul>
@@ -343,6 +347,22 @@
         
     </div>
 
+    <div id="Art" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('about-page')"><-</div>
+                <span class="title-text">ART</span>
+                <div style="width:20px"></div>
+            </div>
+            <!-- <div class="nav-menu">
+                <button onclick="showSection('about-page')">About</button>
+                <button onclick="showSection('projects-page')">Projects</button>
+            </div> -->
+            <div class="gif-container">
+                <img src="art.png" alt="Art" style="width:350px;height:350px;">
+            </div>
+        </div>
+    </div>
 
     <div id="rick-astley" class="page-content">
         <div class="window">
