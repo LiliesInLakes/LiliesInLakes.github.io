@@ -428,6 +428,30 @@
             </div>
         </div>
     </div>
+    <div id="Photobooth" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('projects-page')"><-</div>
+                <span class="title-text">PHOTOBOOTH</span>
+                <div style="width:20px"></div>
+            </div>
+            <!-- <div class="nav-menu">
+                <button onclick="showSection('about-page')">About</button>
+                <button onclick="showSection('projects-page')">Projects</button>
+            </div> -->
+            <div class="window-content">
+                <h2>Photobooth</h2>
+                <hr>
+                <p>This is a Photobooth. It puts filters on your face in real time and puts it together in a filmstrip. I used dlib to put a greem coloured lipstick on the user's face. Dlib finds the landmarks on the person's face to identify the lips. Then, a mask is created to make the lips green. The black and white images are opposite of each other. They show the canny edges</p>
+                <a href="https://github.com/LiliesInLakes/Photobooth" target="_blank">Source code</a><br>
+                <video width="320" height="240" controls autoplay>
+                    <source src="photoboothdemo.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- <p onclick="https://github.com/LiliesInLakes/Symbols-Classifier">https://github.com/LiliesInLakes/Symbols-Classifier</p> -->
+            </div>
+        </div>
+    </div>
     <div id="Speak_It" class="page-content">
         <div class="window">
             <div class="title-bar">
@@ -567,6 +591,8 @@
                     <li onclick="showSection('Marvel-classifier')">Marvel.pth</li>
                     <br>
                     <li onclick="showSection('rick-astley')">Website_Code.html</li>
+                    <br>
+                    <li onclick="showSection('Photobooth')">Photobooth.py</li>
                     <br>
                     <li onclick="showSection('Speak_It')">Speak_It.py</li>
                     <br>
