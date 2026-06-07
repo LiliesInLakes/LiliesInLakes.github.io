@@ -196,8 +196,10 @@
 
         /* --- Retro Window Styling --- */
         .window {
-            width: 90%;
-            max-width: 600px;
+            width: max-content;
+            min-width: 550px;
+            max-width: 70%;
+            height: auto;
             background: var(--window-bg);
             border: 2px solid var(--border-dark);
             box-shadow: 6px 6px 0px rgba(0,0,0,0.3);
@@ -412,8 +414,11 @@
             <div class="window-content">
                 <h2>Image Classifier for ABU Robocon 2025</h2>
                 <hr>
-                <p>It classifes images into 3 classes in real time by taking input from the camera. It's purpose is to help the robot decide which objects to interact with.</p>
-                <p>It uses tensorflow and mobilenet</p>
+                <p>I built a machine learning model that takes input from the camera and classifies the objects captured by the camera into desired classes in real time. 
+                    <br><br>Since this was for the ABU Robocon 2026, the classes are Robocon logo, oracle bone and random (fake symbols). The purpose of this project was to help the robot decide which objects to pick- robot will use the robocon logo to identify scrolls and use oracle bone and random symbols detection to decide which scroll to pick. 
+                    <br><br>This project used Mobilenet CNN (Google), Tensorflow and Keras libraries to train and run the model. I removed the last layer of the ImageNet model and trained it on my dataset to classify the images into 3 classes in real time. The dataset contains 120 images (55 each of fake and real and 40 of logo). I converted the images to grayscale for training. 
+                    <br>It was really fun to learn and implement neural networks without any help from AI. I read the docs of mobilenet, keras, torchvision, tensorflow and onnx and docs by google and microsoft, several blogs, searched stack overflow and reddit, searched in ML for dummies and Deep Learning (Goodfellow) and watched videos on opencv and image classification. I also explored numpy, skimage, onnx, onnxruntime, opencv, matplotlib, torch, yolo and os packages thanks to this project.
+                    <br><br>In the video, I am displaying the symbols on my phone and checking if the predictions are accurate. The predictions are coming on the terminal at the bottom. </p>
                 <a href="https://github.com/LiliesInLakes/Symbols-Classifier" target="_blank">Source code</a><br>
                 <video width="320" height="240" controls autoplay>
                     <source src="ABU2026SymbolClassifier.mov" type="video/mp4">
