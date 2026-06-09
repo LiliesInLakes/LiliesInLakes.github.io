@@ -466,7 +466,7 @@
             <div class="window-content">
                 <h2>Audio Forms Generator</h2>
                 <hr>
-                <p>Speak It enhances internet accessibility. It uses AI to create audio forms in websites and mobile applications to enable those with visual impairments or trouble typing.</p>
+                <p>Speak It aims to enhance internet accessibility. It creates audio forms using text to speech APIs. It takes verbal input from the user and converts it into text to fill the forms. It aims to enable those with visual impairments or trouble typing to access and utilise the benefits of the internet.</p>
                 <p>It won Dr APJ Abdul Kalam Ignited Mind Children Creativity and Innovation Award.</p>
                 <a href=" https://github.com/LiliesInLakes/Speak-It" target="_blank">Source code</a><br>
                 <img src="SpeakItLogo.png" alt="Logo" style="width:120px;height:120px;">
@@ -489,9 +489,12 @@
             <div class="window-content">
                 <h2>150 KB Image Classifier</h2>
                 <hr>
-                <p>It is trained on only STL10 data and has 71% accuracy. It won 2nd place in our college hackathon.</p>
-                <p>It is built with Pytorch using data augmentation and quantization techniques.</p>
+                <p>It is a highly compressed image classifier trained solely on the STL 10 dataset. It utilises conversion to int8 and quantization techniques to achieve a 150 KB model size. That is about 0.4 seconds of scrolling or 9 seconds of music. Quantization decreased the model size by 4 times (580 KB to 150 KB). 
+                    <br><br>Its accuracy is 71.6%. We used cosine anneling and semi supervised learning to increase the dataset it can be trained on (STL 10 dataset has more unlabelled images than labelled images). We also used cutmix and mixup augmentation to increase its accuracy. I realised that training it first on some plain unedited data and then using augmented data boosts accuracy. Another find was that the model’s accuracy increased when we put the batch sizes of unlabelled and labelled loaders in a ratio (we used a ratio of 6 for our final model).</p>
+                <p>It won 2nd place in our college hackathon.</p>
                 <a href="https://github.com/LiliesInLakes/Submission" target="_blank">Source code</a>
+                <br>
+                <img src="marvelspecs.jpeg" alt="Specs" style="width:485px;height:240px;">
                 <!-- <p onclick="https://github.com/LiliesInLakes/Symbols-Classifier">https://github.com/LiliesInLakes/Symbols-Classifier</p> -->
             </div>
         </div>
