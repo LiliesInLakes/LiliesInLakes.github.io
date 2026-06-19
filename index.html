@@ -296,7 +296,18 @@
         </div>
         <div class="click-text">CLICK TO BOOT</div>
     </div> -->
-
+    <div id="Archived-Folder" class="page-content">
+        <div class="window">
+            <div class="title-bar">
+                <div class="back-btn" onclick="showSection('projects-page')"><-</div>
+                <span class="title-text">OVERTHEWIRE</span>
+                <div style="width:20px"></div>
+            </div>
+            <div class="window-content" id="archived-content-target">
+                <p>Loading directory...</p>
+            </div>
+        </div>
+    </div>
     <div id="IIT-Marks" class="page-content">
         <div class="window">
             <div class="title-bar">
@@ -587,6 +598,8 @@
                     <!-- <li>Website_Source_Code</li> -->
                     <!-- <li onclick="showSection('rick-astley')">Summer_Research.pdf</li>
                     <br> -->
+                    <li onclick="loadExternalFolder('Archived-Folder', 'bandit.html')">Bandit Games</li>
+                    <br>
                     <li onclick="showSection('Summer_Research')">Summer_Research.pdf</li>
                     <br>
                     <li onclick="showSection('SymbolsClassifier')">Symbol_Classifier.keras</li>
@@ -610,6 +623,7 @@
     <script>
         // FUNCTION 1: The Initial Boot
         // Add a 'silent' parameter with a default of 'false'
+        
 function showSection(sectionId, silent = false) {
     const allPages = document.querySelectorAll('.page-content');
     allPages.forEach(page => {
@@ -643,6 +657,27 @@ function openPortfolio() {
         // Pass 'true' here to make the transition silent!
         showSection('about-page', true); 
     }, 600);
+}
+function loadExternalFolder(sectionId, fileName) {
+    // 1. Play click sound
+    click_for_others();
+
+    // 2. Fetch the external HTML fragment
+    fetch(fileName)
+        .then(response => {
+            if (!response.ok) throw new Error("Network error");
+            return response.text();
+        })
+        .then(htmlContent => {
+            // 3. Inject the content into the window target
+            document.getElementById('archived-content-target').innerHTML = htmlContent;
+            // 4. Reveal the section
+            showSection(sectionId, true); 
+        })
+        .catch(err => {
+            document.getElementById('archived-content-target').innerHTML = "<h2>Error</h2><hr><p>Could not read directory file.</p>";
+            showSection(sectionId, true);
+        });
 }
 // function logVisitToPrivateSheet() {
 //     const webAppUrl = "https://script.google.com/macros/s/AKfycbxcV2Y7RA2C0U2MX277IfWHtGYc5WspH-b5pFmUB3XTYPWLfQ0XcwmFgzh7NoCfu898/exec"; // Paste your URL from Step 2
